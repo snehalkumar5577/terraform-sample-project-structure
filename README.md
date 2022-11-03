@@ -44,3 +44,10 @@
 
 No outputs.
 <!-- END_TF_DOCS -->
+
+
+## To create infrastructure use below commnads
+```
+terraform init -backend-config=./backend/dev01.tfvars
+terraform apply -var-file=./env/dev01.tfvars
+```
