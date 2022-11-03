@@ -1,0 +1,15 @@
+controller:
+  admissionWebhooks:
+    enabled: false
+  config:
+    whitelist-source-range: "0.0.0.0/0"
+    proxy-body-size: "2048m"
+    client-body-buffer-size: "2048m"
+    use-proxy-protocol: "true"
+  service:
+    targetPorts:
+      https: 80
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "60"
+      service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
+      service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
